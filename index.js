@@ -1,9 +1,14 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import puppeteer from "puppeteer-core";
 async function run() {
   let browser;
 
   try {
-    const auth = "USERNAME:PASSWORD";
+    const username = process.env.USERNAME;
+    const password = process.env.PASSWORD;
+    const auth = `${username}:${password}`;
     browser = await puppeteer.connect({
       browserWSEndpoint: `wss://${auth}@zproxy.lum-superproxy.io:9222`,
     });
