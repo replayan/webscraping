@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 dotenv.config();
 import puppeteer from "puppeteer-core";
+console.log("starting scrape");
 async function run() {
   let browser;
 
